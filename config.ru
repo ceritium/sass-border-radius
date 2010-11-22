@@ -4,6 +4,13 @@ require 'rack/contrib'
 require 'rack-rewrite'
 
 use Rack::Rewrite do
+  if ENV['RACK_ENV'] == 'production'
+    domain = 'sass-border-radius.heroku.com'
+    r301 %r{.*}, "http://#{domain}$&", :if => Proc.new {|rack_env|
+      rack_env['SERVER_NAME'] != domain
+    }
+  end
+  
   rewrite '/', '/index.html'
 end
 
