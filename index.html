@@ -15,7 +15,11 @@
             background: #3d3d3d;
             font: 12px 'Lucida Grande', Arial, sans-serif;
         }
-        
+        #twitter-buttom{
+          position:absolute;
+          top:65px;
+          right:20px;
+        }
         #logo {
             background: url('border_radius.png') top left no-repeat transparent;
             width: 283px;
@@ -196,8 +200,10 @@
                 <input type="checkbox" checked="true" id="opt_css3"><label for="opt_css3"> CSS3</label>
             </div>
         </div>
+        
+
     </div>
-    
+        <div id="twitter-buttom"><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="ceritium">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></div>    
     <script type="text/javascript">
         function update_input_class(dir) {
             value = $('input_' + dir).value;
